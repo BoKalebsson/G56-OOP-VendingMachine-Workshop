@@ -34,6 +34,21 @@ public class VendingMachineClass implements VendingMachine {
 
     @Override
     public Product request(int id) {
+        for(Product product : products) {
+            if (product.getId() == id) {
+                int roundedPrice = (int) Math.round(product.getPrice());
+
+                if (depositPool >= roundedPrice) {
+                    depositPool -= roundedPrice;
+                    return product;
+                } else {
+                    System.out.println("Not enough balance to buy: " + product.getProductName());
+                    return null;
+                }
+            }
+
+        }
+        System.out.println("Product with ID " + id + " not found.");
         return null;
     }
 
