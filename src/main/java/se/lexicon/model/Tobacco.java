@@ -16,7 +16,7 @@ public class Tobacco extends Product {
     }
 
     // Constructor:
-    public Tobacco(double price, String productName) {
+    public Tobacco(double price, String productName, TobaccoType tobaccoType) {
         super(price, productName);
         setTobaccoType(tobaccoType);
     }
@@ -34,9 +34,9 @@ public class Tobacco extends Product {
         return sb.toString();
     }
 
-    public String examine(){
-
-        return "";
+    @Override
+    public String examine() {
+        return String.format("%s (%s) - %.2f kr", getProductName(), tobaccoType, getPrice());
     }
 
     public String use(){
