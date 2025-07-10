@@ -43,7 +43,6 @@ public class Tobacco extends Product {
     }
 
     public String use(){
-
-        return "";
+        return "Rumored to be highly addictive. Enjoy!";
     }
 }
