@@ -22,25 +22,25 @@ public abstract class Product {
     }
 
     public double getPrice() {
-        if (price < 0) {
-            throw new IllegalArgumentException("Price cannot be negative.");
-        }
         return price;
     }
 
     public String getProductName() {
-        if (productName == null || productName.trim().isEmpty()){
-            throw new IllegalArgumentException("Product name cannot be null or empty.");
-        }
         return productName;
     }
 
     // Setters:
     public void setPrice(double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Price cannot be negative.");
+        }
         this.price = price;
     }
 
     public void setProductName(String productName) {
+        if (productName == null || productName.trim().isEmpty()){
+            throw new IllegalArgumentException("Product name cannot be null or empty.");
+        }
         this.productName = productName;
     }
 
