@@ -46,7 +46,6 @@ public class VendingMachineClass implements VendingMachine {
                     return null;
                 }
             }
-
         }
         System.out.println("Product with ID " + id + " not found.");
         return null;
@@ -59,7 +58,12 @@ public class VendingMachineClass implements VendingMachine {
 
     @Override
     public String getDescription(int id) {
-        return "";
+        for (Product product : products){
+            if (product.getId() == id) {
+                return product.examine();
+            }
+        }
+        return "Product with ID " + id + " not found.";
     }
 
     @Override
