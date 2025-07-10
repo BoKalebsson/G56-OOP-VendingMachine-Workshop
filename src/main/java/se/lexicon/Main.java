@@ -33,8 +33,32 @@ public class Main {
         // Setting up a new VendingMachineClass:
         VendingMachineClass vendingMachine = new VendingMachineClass(100, products);
 
-        // Simulating getBalance:
-        System.out.println("Balance: " + vendingMachine.getBalance() + " kr.");
+        // Simulating getBalance():
+        System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
+
+        // Simulating valid addCurrency():
+        int differentAmount = 10;
+
+        if (ValidAmount.isValid(differentAmount)) {
+            vendingMachine.addCurrency(differentAmount);
+            System.out.println("Deposit successful!\n");
+        } else {
+            System.out.println("The amount is invalid. Try with 10, 20 or 50.\n");
+        }
+        System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
+
+        // Simulating invalid addCurrency():
+        int amount = 3;
+
+        if (ValidAmount.isValid(amount)) {
+            vendingMachine.addCurrency(amount);
+            System.out.println("Deposit successful!\n");
+        } else {
+            System.out.println("The amount is invalid. Try with 10, 20 or 50.\n");
+        }
+        System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
+
+
 
     }
 }
