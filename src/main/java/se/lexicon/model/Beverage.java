@@ -36,7 +36,7 @@ public class Beverage extends Product {
 
     @Override
     public String examine() {
-        return String.format("%s - %.2f kr (%s)",
+        return String.format("%s - %.2f kr (%s)%n",
                 getProductName(),
                 getPrice(),
                 isAlcoholFree ? "Alcohol-free" : "Contains alcohol");

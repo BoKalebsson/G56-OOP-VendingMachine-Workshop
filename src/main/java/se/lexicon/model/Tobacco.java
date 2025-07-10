@@ -39,7 +39,7 @@ public class Tobacco extends Product {
 
     @Override
     public String examine() {
-        return String.format("%s (%s) - %.2f kr", getProductName(), tobaccoType, getPrice());
+        return String.format("%s (%s) - %.2f kr%n", getProductName(), tobaccoType, getPrice());
     }
 
     public String use(){
