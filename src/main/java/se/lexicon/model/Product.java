@@ -52,5 +52,9 @@ public abstract class Product {
         return sb.toString();
     }
 
+    public abstract String examine();
+
+    public abstract String use();
+
 
 }
