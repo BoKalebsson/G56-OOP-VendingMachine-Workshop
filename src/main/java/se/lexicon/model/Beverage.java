@@ -11,8 +11,8 @@ public class Beverage extends Product {
     }
 
     // Setter:
-    public void isAlcoholFree(boolean sugarFree) {
-        this.isAlcoholFree = sugarFree;
+    public void setAlcoholFree(boolean isAlcoholFree) {
+        this.isAlcoholFree = isAlcoholFree;
     }
 
     // Constructor:
@@ -34,9 +34,12 @@ public class Beverage extends Product {
         return sb.toString();
     }
 
-    public String examine(){
-
-        return "";
+    @Override
+    public String examine() {
+        return String.format("%s - %.2f kr (%s)",
+                getProductName(),
+                getPrice(),
+                isAlcoholFree ? "Alcohol-free" : "Contains alcohol");
     }
 
     public String use(){
