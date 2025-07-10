@@ -12,12 +12,6 @@ public class VendingMachineClass implements VendingMachine {
         this.products = products;
     }
 
-    // Getters:
-
-
-    // Setters:
-
-
     // Operations:
     @Override
     public void addCurrency(int amount) {
