@@ -53,7 +53,9 @@ public class VendingMachineClass implements VendingMachine {
 
     @Override
     public int endSession() {
-        return 0;
+        int change = depositPool;
+        depositPool = 0;
+        return change;
     }
 
     @Override
