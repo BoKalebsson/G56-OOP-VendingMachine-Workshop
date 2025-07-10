@@ -2,16 +2,18 @@ package se.lexicon.model;
 
 public abstract class Product {
 
+    private static int idCounter = 0;
+
     // Attributes:
     private int id;
     private double price;
     private String productName;
 
     // Constructor:
-    public Product(int id, double price, String productName) {
-        this.id = id;
-        this.price = price;
-        this.productName = productName;
+    public Product(double price, String productName) {
+        this.id = ++idCounter;
+        setPrice(price);
+        setProductName(productName);
     }
 
     // Getters:
@@ -20,18 +22,20 @@ public abstract class Product {
     }
 
     public double getPrice() {
+        if (price < 0) {
+            throw new IllegalArgumentException("Price cannot be negative.");
+        }
         return price;
     }
 
     public String getProductName() {
+        if (productName == null || productName.trim().isEmpty()){
+            throw new IllegalArgumentException("Product name cannot be null or empty.");
+        }
         return productName;
     }
 
     // Setters:
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setPrice(double price) {
         this.price = price;
     }
@@ -55,6 +59,5 @@ public abstract class Product {
     public abstract String examine();
 
     public abstract String use();
-
 
 }
