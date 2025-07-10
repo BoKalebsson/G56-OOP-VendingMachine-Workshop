@@ -5,7 +5,7 @@ public abstract class Product {
     private static int idCounter = 0;
 
     // Attributes:
-    private int id;
+    private final int id;
     private double price;
     private String productName;
 
