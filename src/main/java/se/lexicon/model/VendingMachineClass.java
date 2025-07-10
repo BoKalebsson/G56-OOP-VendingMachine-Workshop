@@ -21,7 +21,10 @@ public class VendingMachineClass implements VendingMachine {
     // Operations:
     @Override
     public void addCurrency(int amount) {
-
+        if (!ValidAmount.isValid(amount)) {
+            throw new IllegalArgumentException("Invalid currency amount: " + amount);
+        }
+        depositPool += amount;
     }
 
     @Override
