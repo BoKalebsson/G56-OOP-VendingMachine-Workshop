@@ -12,6 +12,9 @@ public class Tobacco extends Product {
 
     // Setter:
     public void setTobaccoType(TobaccoType tobaccoType) {
+        if (tobaccoType == null) {
+            throw new IllegalArgumentException("Tobacco type cannot be null.");
+        }
         this.tobaccoType = tobaccoType;
     }
 
