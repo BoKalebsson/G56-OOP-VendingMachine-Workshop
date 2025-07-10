@@ -42,6 +42,7 @@ public class Beverage extends Product {
                 isAlcoholFree ? "Alcohol-free" : "Contains alcohol");
     }
 
+    @Override
     public String use(){
         return "May or may not contain alcohol. Drink in moderation!";
     }

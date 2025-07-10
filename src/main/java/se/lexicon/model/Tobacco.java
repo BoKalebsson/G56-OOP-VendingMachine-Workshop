@@ -42,6 +42,7 @@ public class Tobacco extends Product {
         return String.format("%s (%s) - %.2f kr%n", getProductName(), tobaccoType, getPrice());
     }
 
+    @Override
     public String use(){
         return "Rumored to be highly addictive. Enjoy!";
     }
