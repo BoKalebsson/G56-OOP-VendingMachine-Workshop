@@ -42,8 +42,8 @@ public class Candy extends Product {
                 isSugarFree ? "Sugar-free" : "Contains sugar");
     }
 
+    @Override
     public String use(){
-
-        return "";
+        return "May cause mild or severe sugar-rush. Enjoy!";
     }
 }
