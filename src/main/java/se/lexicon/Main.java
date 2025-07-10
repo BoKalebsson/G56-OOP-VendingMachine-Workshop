@@ -24,13 +24,17 @@ public class Main {
         System.out.println("Is 20 valid? " + ValidAmount.isValid(20));
         System.out.println("Is 7 valid? " + ValidAmount.isValid(7));
 
-        // Printing out all valid amounts:
-        System.out.println("All valid amounts:");
-        for (ValidAmount amount : ValidAmount.values()) {
-            System.out.println(amount + " = " + amount.getValue());
-        }
+        // Setting up a new Product[]:
+        Product[] products = {
+                new Beverage(25, "Cola", true),
+                new Tobacco(50, "Cigarettes", TobaccoType.Cigarettes)
+        };
 
+        // Setting up a new VendingMachineClass:
+        VendingMachineClass vendingMachine = new VendingMachineClass(100, products);
 
+        // Simulating getBalance:
+        System.out.println("Balance: " + vendingMachine.getBalance() + " kr.");
 
     }
 }
