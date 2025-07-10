@@ -27,11 +27,12 @@ public class Main {
         // Setting up a new Product[]:
         Product[] products = {
                 new Beverage(25, "Cola", true),
-                new Tobacco(50, "Cigarettes", TobaccoType.Cigarettes)
+                new Tobacco(50, "Cigarettes", TobaccoType.Cigarettes),
+                cocacolazero, ettanlös,polkagris
         };
 
         // Setting up a new VendingMachineClass:
-        VendingMachineClass vendingMachine = new VendingMachineClass(100, products);
+        VendingMachineClass vendingMachine = new VendingMachineClass(0, products);
 
         // Simulating getBalance():
         System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
@@ -57,6 +58,11 @@ public class Main {
             System.out.println("The amount is invalid. Try with 10, 20 or 50.\n");
         }
         System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
+
+        // Simulating getProducts():
+        for (String desc : vendingMachine.getProducts()) {
+            System.out.println(desc);
+        }
 
 
 
