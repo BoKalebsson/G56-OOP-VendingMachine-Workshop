@@ -70,6 +70,16 @@ public class VendingMachineClass implements VendingMachine {
 
     @Override
     public String[] getProducts() {
-        return new String[0];
+        String[] currentProducts = new String[products.length];
+        for (int i = 0; i < products.length; i++) {
+            Product product = products[i];
+            currentProducts[i] = String.format(
+                    "Id: %d, Name: %s, Price: %.2f kr",
+                    product.getId(),
+                    product.getProductName(),
+                    product.getPrice()
+            );
+        }
+        return currentProducts;
     }
 }
