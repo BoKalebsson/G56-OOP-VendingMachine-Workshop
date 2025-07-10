@@ -21,8 +21,8 @@ public class Main {
         System.out.println(ettanlös.examine());
 
         // Simulating different scenarios for testing enum isValid:
-        System.out.println("Is 20 valid? " + ValidAmount.isValid(20));
-        System.out.println("Is 7 valid? " + ValidAmount.isValid(7));
+        System.out.println("Is 20 valid? " + ValidAmount.isValid(20) + "\n");
+        System.out.println("Is 7 valid? " + ValidAmount.isValid(7) + "\n");
 
         // Setting up a new Product[]:
         Product[] products = {
@@ -34,18 +34,7 @@ public class Main {
         // Setting up a new VendingMachineClass:
         VendingMachineClass vendingMachine = new VendingMachineClass(0, products);
 
-        // Simulating getBalance():
-        System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
-
-        // Simulating valid addCurrency():
-        int differentAmount = 10;
-
-        if (ValidAmount.isValid(differentAmount)) {
-            vendingMachine.addCurrency(differentAmount);
-            System.out.println("Deposit successful!\n");
-        } else {
-            System.out.println("The amount is invalid. Try with 10, 20 or 50.\n");
-        }
+        // Simulating getBalance() with 0 in balance:
         System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
 
         // Simulating invalid addCurrency():
@@ -53,6 +42,17 @@ public class Main {
 
         if (ValidAmount.isValid(amount)) {
             vendingMachine.addCurrency(amount);
+            System.out.println("Deposit successful!\n");
+        } else {
+            System.out.println("The amount " + amount + " is invalid. Try with 10, 20 or 50.\n");
+        }
+        System.out.println("Balance: " + vendingMachine.getBalance() + " kr.\n");
+
+        // Simulating valid addCurrency():
+        int differentAmount = 10;
+
+        if (ValidAmount.isValid(differentAmount)) {
+            vendingMachine.addCurrency(differentAmount);
             System.out.println("Deposit successful!\n");
         } else {
             System.out.println("The amount is invalid. Try with 10, 20 or 50.\n");
