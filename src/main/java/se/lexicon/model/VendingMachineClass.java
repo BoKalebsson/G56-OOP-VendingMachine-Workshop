@@ -66,6 +66,7 @@ public class VendingMachineClass implements VendingMachine {
     @Override
     public String[] getProducts() {
         String[] currentProducts = new String[products.length];
+        System.out.println("-- Current Products in Vending Machine --");
         for (int i = 0; i < products.length; i++) {
             Product product = products[i];
             currentProducts[i] = String.format(
