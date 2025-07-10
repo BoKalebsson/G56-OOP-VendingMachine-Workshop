@@ -40,6 +40,7 @@ public class VendingMachineClass implements VendingMachine {
 
                 if (depositPool >= roundedPrice) {
                     depositPool -= roundedPrice;
+                    System.out.println("Purchase successful: " + product.getProductName());
                     return product;
                 } else {
                     System.out.println("Not enough balance to buy: " + product.getProductName());
