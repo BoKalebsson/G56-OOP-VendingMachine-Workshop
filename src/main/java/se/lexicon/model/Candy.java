@@ -34,9 +34,12 @@ public class Candy extends Product {
         return sb.toString();
     }
 
-    public String examine(){
-
-        return "";
+    @Override
+    public String examine() {
+        return String.format("%s - %.2f kr (%s)",
+                getProductName(),
+                getPrice(),
+                isSugarFree ? "Sugar-free" : "Contains sugar");
     }
 
     public String use(){
