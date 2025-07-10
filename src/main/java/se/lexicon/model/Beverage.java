@@ -43,7 +43,6 @@ public class Beverage extends Product {
     }
 
     public String use(){
-
-        return "";
+        return "May or may not contain alcohol. Drink in moderation!";
     }
 }
