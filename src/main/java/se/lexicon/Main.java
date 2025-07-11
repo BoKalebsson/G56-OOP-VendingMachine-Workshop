@@ -3,6 +3,7 @@ package se.lexicon;
 import se.lexicon.model.*;
 
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,9 +45,50 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.print("Enter amount to add: ");
-                    int amount = scanner.nextInt();
-                    vendingMachine.addCurrency(amount);
+                    while (true) {
+                        System.out.print("Enter amount to add (or 0 to cancel): ");
+
+                        if (!scanner.hasNextInt()) {
+                            System.out.println("\nInvalid input. Please enter a numeric value.\n");
+                            scanner.next();
+                            continue;
+                        }
+
+                        int amount = scanner.nextInt();
+
+                        if (amount == 0) {
+                            System.out.println("Deposit cancelled.");
+                            break;
+                        }
+
+                        try {
+                            vendingMachine.addCurrency(amount);
+                            System.out.println("Deposit successful!");
+                            break;
+
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("\nInvalid amount. Please enter a valid denomination:");
+
+                            StringJoiner smallDenomination = new StringJoiner(", ");
+                            StringJoiner mediumDenomination = new StringJoiner(", ");
+                            StringJoiner largeDenomination = new StringJoiner(", ");
+
+                            for (ValidAmount denomination : ValidAmount.values()) {
+                                int value = denomination.getValue();
+                                if (value <= 5) {
+                                    smallDenomination.add(String.valueOf(value));
+                                } else if (value <= 50) {
+                                    mediumDenomination.add(String.valueOf(value));
+                                } else {
+                                    largeDenomination.add(String.valueOf(value));
+                                }
+                            }
+
+                            System.out.println("\n• Small Denomination: " + smallDenomination);
+                            System.out.println("• Medium Denomination: " + mediumDenomination);
+                            System.out.println("• Large Denomination: " + largeDenomination + "\n");
+                        }
+                    }
                     break;
 
                 case 0:
