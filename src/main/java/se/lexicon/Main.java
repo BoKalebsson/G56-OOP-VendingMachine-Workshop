@@ -94,6 +94,11 @@ public class Main {
                     System.out.println("\nCurrent Balance: " + vendingMachine.getBalance() + " kr.");
                     break;
 
+                case 5:
+                    int change = vendingMachine.endSession();
+                    System.out.println("\nSession ended. Returned change: " + change + " kr.");
+                    break;
+
                 case 0:
                     running = false;
                     System.out.println("\nThank you for using the Vending Machine!");
