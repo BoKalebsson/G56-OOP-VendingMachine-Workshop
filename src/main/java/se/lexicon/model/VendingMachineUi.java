@@ -49,7 +49,7 @@ public class VendingMachineUi {
 
     private int getUserInput() {
         while (!scanner.hasNextInt()) {
-            System.out.println("Invalid input. Please enter a number:");
+            System.out.println("\nInvalid input. Please enter a number:");
             scanner.next();
         }
         return scanner.nextInt();
@@ -66,7 +66,7 @@ public class VendingMachineUi {
         while (true) {
             System.out.print("\nEnter amount to add (or 0 to cancel): ");
             if (!scanner.hasNextInt()) {
-                System.out.println("Invalid input. Please enter a numeric value.");
+                System.out.println("\nInvalid input. Please enter a numeric value.");
                 scanner.next();
                 continue;
             }
@@ -81,7 +81,7 @@ public class VendingMachineUi {
                 vendingMachine.addCurrency(amount);
                 break;
             } catch (IllegalArgumentException e) {
-                System.out.println("\nInvalid amount. Please enter a valid denomination:");
+                System.out.println("\nInvalid amount. Please enter a valid denomination:\n");
 
                 StringJoiner small = new StringJoiner(", ");
                 StringJoiner medium = new StringJoiner(", ");
