@@ -10,7 +10,7 @@ public class Setup {
                 new Beverage(24.99, "Monster Energy Drink", true),
                 new Beverage(39, "Staropramen", false),
                 new Tobacco(79, "Marlboro Red", TobaccoType.Cigarettes),
-                new Tobacco(65, "General Portion", TobaccoType.Snuff)
+                new Tobacco(99, "General Portion", TobaccoType.Snuff)
         };
     }
 

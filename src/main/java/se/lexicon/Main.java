@@ -10,18 +10,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
-        // Setting up the Products[]:
-        Product[] products = {
-            new Candy(29, "Snickers Chocolate Bar", false),
-            new Candy(19, "Werther's Original", true),
-            new Beverage(24.99, "Monster Energy Drink", true),
-            new Beverage(39, "Staropramen", false),
-            new Tobacco(79, "Marlboro Red", TobaccoType.Cigarettes),
-            new Tobacco(65, "General Portion", TobaccoType.Snuff)
-        };
-
-        // Setting up the Vending Machine:
-        VendingMachineClass vendingMachine = new VendingMachineClass(0, products);
+        // Setting up a Vending Machine with a set Product[] of products:
+        VendingMachineClass vendingMachine = Setup.createVendingMachine();
 
         System.out.println("Welcome to the Vending Machine!");
 
@@ -85,7 +75,7 @@ public class Main {
 
                             System.out.println("\n• Small Denomination: " + smallDenomination);
                             System.out.println("• Medium Denomination: " + mediumDenomination);
-                            System.out.println("• Large Denomination: " + largeDenomination + "\n");
+                            System.out.println("• Large Denomination: " + largeDenomination);
                         }
                     }
                     break;
