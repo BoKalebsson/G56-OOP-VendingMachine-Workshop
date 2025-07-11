@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
-        // Setting up a Vending Machine with a set Product[] of products:
+        // Setting up a Vending Machine with a set Product[] of products fron class Setup:
         VendingMachineClass vendingMachine = Setup.createVendingMachine();
 
         System.out.println("Welcome to the Vending Machine!");
