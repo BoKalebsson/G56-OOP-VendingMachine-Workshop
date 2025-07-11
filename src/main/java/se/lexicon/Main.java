@@ -90,6 +90,16 @@ public class Main {
                     }
                     break;
 
+                case 3:
+                    System.out.print("\nEnter Product ID to buy: ");
+                    int productId = scanner.nextInt();
+                    Product product = vendingMachine.request(productId);
+                    if (product != null) {
+                        System.out.println("\nDescription: " + vendingMachine.getDescription(productId));
+                        System.out.println(product.use());
+                    }
+                    break;
+
                 case 4:
                     System.out.println("\nCurrent Balance: " + vendingMachine.getBalance() + " kr.");
                     break;
