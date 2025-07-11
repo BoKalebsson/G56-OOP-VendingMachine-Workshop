@@ -43,6 +43,12 @@ public class Main {
                     }
                     break;
 
+                case 2:
+                    System.out.print("Enter amount to add: ");
+                    int amount = scanner.nextInt();
+                    vendingMachine.addCurrency(amount);
+                    break;
+
                 case 0:
                     running = false;
                     System.out.println("Thank you for using the Vending Machine!");
