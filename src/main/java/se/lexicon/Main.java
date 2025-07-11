@@ -46,10 +46,10 @@ public class Main {
 
                 case 2:
                     while (true) {
-                        System.out.print("Enter amount to add (or 0 to cancel): ");
+                        System.out.print("\nEnter amount to add (or 0 to cancel): ");
 
                         if (!scanner.hasNextInt()) {
-                            System.out.println("\nInvalid input. Please enter a numeric value.\n");
+                            System.out.println("\nInvalid input. Please enter a numeric value.");
                             scanner.next();
                             continue;
                         }
@@ -63,7 +63,6 @@ public class Main {
 
                         try {
                             vendingMachine.addCurrency(amount);
-                            System.out.println("Deposit successful!");
                             break;
 
                         } catch (IllegalArgumentException e) {
@@ -91,9 +90,13 @@ public class Main {
                     }
                     break;
 
+                case 4:
+                    System.out.println("\nCurrent Balance: " + vendingMachine.getBalance() + " kr.");
+                    break;
+
                 case 0:
                     running = false;
-                    System.out.println("Thank you for using the Vending Machine!");
+                    System.out.println("\nThank you for using the Vending Machine!");
                     break;
 
                 default:
